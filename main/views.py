@@ -9,5 +9,6 @@ from .serializers import ArticleSerializer
 @api_view(['GET'])
 def get_articles_list(request):
     articles_queryset = Article.objects.all()
+    print(articles_queryset)
     serializer = ArticleSerializer(articles_queryset, many=True)
     return Response(serializer.data)
